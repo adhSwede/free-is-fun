@@ -1,22 +1,22 @@
-const baseURL = "/api/freetogame"; // Uses Vercel rewrite
+const baseURL = "/api/proxy"; // Corrected base URL
 
 export const fetchAllGames = async () => {
-  const response = await fetch(`${baseURL}/games`);
+  const response = await fetch(`${baseURL}?path=games`);
   return response.json();
 };
 
 export const fetchGamesByPlatform = async (platform: string) => {
-  const response = await fetch(`${baseURL}/games?platform=${platform}`);
+  const response = await fetch(`${baseURL}?path=games&platform=${platform}`);
   return response.json();
 };
 
 export const fetchGamesByCategory = async (category: string) => {
-  const response = await fetch(`${baseURL}/games?category=${category}`);
+  const response = await fetch(`${baseURL}?path=games&category=${category}`);
   return response.json();
 };
 
 export const fetchSortedGames = async (sortBy: string) => {
-  const response = await fetch(`${baseURL}/games?sort-by=${sortBy}`);
+  const response = await fetch(`${baseURL}?path=games&sort-by=${sortBy}`);
   return response.json();
 };
 
@@ -26,7 +26,7 @@ export const fetchGamesByPlatformCategorySorted = async (
   sortBy: string
 ) => {
   const response = await fetch(
-    `${baseURL}/games?platform=${platform}&category=${category}&sort-by=${sortBy}`
+    `${baseURL}?path=games&platform=${platform}&category=${category}&sort-by=${sortBy}`
   );
   return response.json();
 };
@@ -36,7 +36,7 @@ export const fetchFilteredGames = async (
   platform?: string,
   sortBy?: string
 ) => {
-  let url = `${baseURL}/filter?tag=${tags.join(".")}`;
+  let url = `${baseURL}?path=filter&tag=${tags.join(".")}`;
   if (platform) url += `&platform=${platform}`;
   if (sortBy) url += `&sort=${sortBy}`;
   const response = await fetch(url);
@@ -44,6 +44,6 @@ export const fetchFilteredGames = async (
 };
 
 export const fetchGameDetails = async (gameId: number) => {
-  const response = await fetch(`${baseURL}/game?id=${gameId}`);
+  const response = await fetch(`${baseURL}?path=game&id=${gameId}`);
   return response.json();
 };

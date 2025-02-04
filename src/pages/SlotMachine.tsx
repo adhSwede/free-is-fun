@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchAllGames } from "../services/api";
+import { fetchAllGames } from "../api/api";
 import GameCard from "../components/GameCard";
 
 const SlotMachine = () => {
