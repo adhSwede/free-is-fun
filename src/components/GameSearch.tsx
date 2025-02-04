@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SearchForm from "./SearchForm";
 import SearchResults from "./SearchResults";
-import { fetchAllGames, fetchGamesByCategory } from "../api/api";
+import { fetchAllGames, fetchGamesByCategory } from "../../api/api";
 
 const GameSearch = () => {
   const [games, setGames] = useState<any[]>([]);

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchAllGames } from "../api/api";
+import { fetchAllGames } from "../../api/api";
 
 const HeroSection = () => {
   const [randomGame, setRandomGame] = useState<any | null>(null);
