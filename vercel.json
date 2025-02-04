@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/freetogame/:path*",
+        "destination": "https://www.freetogame.com/api/:path*"
+      }
+    ]
+  }

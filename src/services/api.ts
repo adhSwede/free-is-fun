@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3000/api";
+const baseURL = "/api/freetogame"; // Uses Vercel rewrite
 
 export const fetchAllGames = async () => {
   const response = await fetch(`${baseURL}/games`);
@@ -23,7 +23,7 @@ export const fetchSortedGames = async (sortBy: string) => {
 export const fetchGamesByPlatformCategorySorted = async (
   platform: string,
   category: string,
-  sortBy: string 
+  sortBy: string
 ) => {
   const response = await fetch(
     `${baseURL}/games?platform=${platform}&category=${category}&sort-by=${sortBy}`
