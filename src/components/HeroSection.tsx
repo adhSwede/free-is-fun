@@ -16,8 +16,6 @@ const HeroSection = () => {
     getRandomGame();
   }, []);
 
-  const paragraph1 = ``;
-
   return (
     <div className="flex flex-col">
       <section className="flex flex-col gap-6">
